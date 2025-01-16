@@ -19,6 +19,19 @@ class BlackJack:
         # show the initial cards and scores
         self.show_initial_cards()
 
+    def collect_wagers(self):
+        user_input = 0
+        print(f"Your available balance is: {self.player.balance()}")
+        while True:
+            user_input = int(input("How much would you like to wager? "))
+            if user_input > 0 and user_input <= self.player.balance:
+                self.player.set_wager(user_input)
+                break
+            elif user_input <= 0:
+                print("Invalid input, please try again. Input should be a whole number")
+            else:
+                print("Insufficient balance, wager amoutn too high!")
+
 if __name__ == '__main__':
     bj = BlackJack()
     bj.set_up_game()
