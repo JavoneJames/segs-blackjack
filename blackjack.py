@@ -24,7 +24,7 @@ class BlackJack:
         print(f"Your available balance is: {self.player.balance()}")
         while True:
             user_input = int(input("How much would you like to wager? "))
-            if user_input > 0 and user_input <= self.player.balance:
+            if user_input > 0 and user_input <= self.player.balance():
                 self.player.set_wager(user_input)
                 break
             elif user_input <= 0:
