@@ -11,7 +11,7 @@ class PersonTestCase(unittest.TestCase):
     
     # test that a person with no cards has a score of 0
     def test_empty_hand(self):
-        pass
+        self.assertEqual(self.person.score(), 0)
 
     # test that a person with 2 cards has the correct score
     def test_two_cards(self):
