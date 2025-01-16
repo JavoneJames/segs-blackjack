@@ -23,4 +23,10 @@ class PersonTestCase(unittest.TestCase):
     
     # test that the score is calculated for multiple cards
     def test_multiple_cards(self):
-        pass
+        card1 = Card('10')
+        card2 = Card('J')
+        card3 = Card('K')
+        self.person.retrieve_card(card=card1)
+        self.person.retrieve_card(card=card2)
+        self.person.retrieve_card(card=card3)
+        self.assertGreater(self.person.score(), 21)
