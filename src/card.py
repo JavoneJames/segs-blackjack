@@ -15,4 +15,4 @@ class Card:
         
     # return card rank as a string
     def __str__(self):
-        return f"{self.rank}"
+        return self.rank

@@ -43,22 +43,28 @@ class BlackJack:
         # check if either player or dealer has a blackjack
         if self.player.score() == 21:
             print("Player has a Blackjack!")
+            print(f"Player's cards: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
             return
         elif self.dealer.score() == 21:
             print("Dealer has a Blackjack!")
+            print(f"Player's cards: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
             return
         # player's turn
         self.player.turn()
         if self.player.score() > 21:
             print("Player busts! Dealer wins!")
-            self.determine_outcome()
+            print(f"Player's card: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
             return
         
         # dealer's turn
         self.dealer.turn()
         if self.dealer.score() > 21:
             print("Dealer busts! Player wins!")
-            self.determine_outcome()
+            print(f"Player's card: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
             return
         self.determine_outcome()
 
@@ -68,12 +74,18 @@ class BlackJack:
         dealer_score = self.dealer.score()
         if player_score > dealer_score:
             print("Player wins!")
+            print(f"Player's card: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
             self.player.update_balance(True)
         elif player_score < dealer_score:
             print("Dealer wins!")
+            print(f"Player's card: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
             self.player.update_balance(False)
         else:
             print("It's a tie!")
+            print(f"Player's card: {self.player}")
+            print("Dealer's cards:", self.dealer.reveal_cards)
 
 if __name__ == '__main__':
     bj = BlackJack()

@@ -18,4 +18,3 @@ class Dealer(Person):
     def reveal_cards(self):
         hand = [str(card) for card in self.cards]
         print("Dealer's cards:", hand)
-        print("Dealer's score:", self.score())
