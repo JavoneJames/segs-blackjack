@@ -5,28 +5,28 @@ from src.card import Card
 class CardTestCase(unittest.TestCase):
 
     def setUp(self):  # this method will be run before each test
-        self.card = Card()
+        self.card = None
 
     def tearDown(self):  # this method will be run after each test
         pass
 
-    def test_get_card_value(self):
-        # Test for a card with rank '10'
-        card = Card('10')
-        result = card.get_value()
-        self.assertEqual(result, 10)  # Checking if it returns 10 for '10'
-        
-        # Test for a face card 'J'
-        card = Card('J')
-        result = card.get_value()
-        self.assertEqual(result, 10)  # Checking if it returns 10 for 'J'
+    # Test for number card '10'
+    def test_get_card_value_number(self):
+        self.card = Card('10')
+        result = self.card.get_value()
+        self.assertEqual(result, 10)
 
-        # # Test for Ace card - this should fail is uncommented
-        # card = Card('2')
-        # result = card.get_value()
-        # self.assertEqual(result, 11)  # Checking if it returns 11 for 'A'
+    # Test for a face card like 'J'
+    def test_get_card_value_face_card(self):
+        self.card = Card('J')
+        result = self.card.get_value()
+        self.assertEqual(result, 10)
 
-
+    # def test_get_card_low_value_number(self):
+    # # Test for 2 card - this should fail is uncommented
+    #     card = Card('2')
+    #     result = card.get_value()
+    #     self.assertEqual(result, 11)
 
 
 if __name__ == '__main__':
