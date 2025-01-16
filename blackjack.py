@@ -39,6 +39,16 @@ class BlackJack:
         # display dealer's first card (only the upcard)
         print("Dealer's upcard:", self.dealer.cards[0].rank)
 
+    def play(self):
+        # add game logic for player and dealer turns
+        self.player.turn()
+        if self.player.score() <= 21:
+            self.dealer.turn()
+        else:
+            print("Player busts! Dealer wins!")
+        
+        self.determine_outcome()
+
 if __name__ == '__main__':
     bj = BlackJack()
     bj.set_up_game()
