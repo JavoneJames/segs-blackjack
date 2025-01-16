@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock
 from src.dealer import Dealer
 from src.deck import Deck
 from src.card import Card
@@ -7,7 +7,7 @@ from src.card import Card
 class PlayerTestCase(unittest.TestCase):
 
     def setUp(self):  # this method will be run before each test
-        self.deck = Deck()
+        self.deck = MagicMock(Deck)
         self.dealer = Dealer(self.deck)
 
     def tearDown(self):  # this method will be run after each test
