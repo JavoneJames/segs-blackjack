@@ -13,3 +13,6 @@ class Deck:
         print("Dealer shuffling cards...")
         shuffle(self.cards)
 
+    # deal a single card from the deck
+    def deal_card(self):
+        return self.cards.pop()
