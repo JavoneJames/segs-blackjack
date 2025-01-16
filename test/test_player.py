@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from src.player import Player
 
 class PlayerTestCase(unittest.TestCase):
