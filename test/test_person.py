@@ -1,5 +1,6 @@
 import unittest
 from src.person import Person
+from src.card import Card
 
 class PersonTestCase(unittest.TestCase):
 
