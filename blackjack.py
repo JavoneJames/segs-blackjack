@@ -1,9 +1,12 @@
 from src.deck import Deck
+from src.dealer import Dealer
+from src.player import Player
 
-
-def play():
-    print('Hello, potential future BBC developer!')  # execution starts here! remove this print() and add your own code.
-
+class BlackJack:
+    def __init__(self):
+        self.deck = Deck()
+        self.dealer = Dealer(self.deck)
+        self.player = Player(self.dealer)
 
 if __name__ == '__main__':
     play()
