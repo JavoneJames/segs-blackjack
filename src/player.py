@@ -7,3 +7,33 @@ class Player(Person):
         self.dealer = dealer
         self.avaiable_balance = avaiable_balance
         self.wager = 0
+
+    # ask the player whether or not they want to hit or stand
+    def choose_action(self):
+        user_input = input("Would you like to [H]it or [S]tand? ").lower()
+        return user_input
+    
+    def turn(self):
+        while True:
+            user_input = self.choose_action()
+            if user_input == 'h':
+                temp = self.dealer.deal_card()
+                self.retrieve_card(temp)
+                print("Player decides to HIT!")
+                print(f"Card drawn by Player is {temp}")
+                print("Player's score:", self.score())
+
+                if self.score() > 21:
+                    print("You bust! Game over.")
+                    break
+            elif user_input == 's':
+                print("Player decides to STAND!")
+                print(f"Player's cards {self}")
+                print("Player's score:", self.score())
+                break
+            else:
+                print("Invalid choice. Pleases choose [H]it or [S]tand")
+    
+    def __str__(self):
+        hand = [str(card) for card in self.cards]
+        return f"{hand}"
