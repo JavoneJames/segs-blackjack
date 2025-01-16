@@ -40,6 +40,7 @@ class BlackJack:
         print("Dealer's upcard:", self.dealer.cards[0].rank)
 
     def play(self):
+        # check if either player or dealer has a blackjack
         if self.player.score() == 21:
             print("Player has a Blackjack!")
             self.determine_outcome()
@@ -48,20 +49,21 @@ class BlackJack:
             print("Dealer has a Blackjack!")
             self.determine_outcome()
             return
-        # add game logic for player and dealer turns
+        # player's turn
         self.player.turn()
         if self.player.score() > 21:
             print("Player busts! Dealer wins!")
             self.determine_outcome()
             return
         
+        # dealer's turn
         self.dealer.turn()
         if self.dealer.score() > 21:
             print("Dealer busts! Player wins!")
             self.determine_outcome()
             return
         self.determine_outcome()
-        
+
     # determines blackjack winner by checking dealer and player total scores
     def determine_outcome(self):
         player_score = self.player.score()
