@@ -49,3 +49,11 @@ class PlayerTestCase(unittest.TestCase):
         self.player.retrieve_card(self.card_king)
         self.player.retrieve_card(self.card_ace)
         self.assertTrue(self.player.score() <= 21)
+
+     """ Given my score is updated
+        When it is 22 or more 
+        Then I am ‘bust’ and do not have a valid hand """
+    def test_bust_hand_score_more_than_21(self):
+        self.player.retrieve_card(self.card_king)
+        self.player.retrieve_card(self.card_ace)
+        self.player.retrieve_card(Card('10'))
