@@ -70,8 +70,10 @@ class BlackJack:
         dealer_score = self.dealer.score()
         if player_score > dealer_score:
             print("Player wins!")
+            self.player.update_balance(True)
         elif player_score < dealer_score:
             print("Dealer wins!")
+            self.player.update_balance(False)
         else:
             print("It's a tie!")
 
