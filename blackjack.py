@@ -49,6 +49,18 @@ class BlackJack:
         
         self.determine_outcome()
 
+    # determines blackjack winner by checking dealer and player total scores
+    def determine_outcome(self):
+        player_score = self.player.score()
+        dealer_score = self.dealer.score()
+
+        if player_score > dealer_score:
+            print("Player wins!")
+        elif player_score < dealer_score:
+            print("Dealer wins!")
+        else:
+            print("It's a tie!")
+
 if __name__ == '__main__':
     bj = BlackJack()
     bj.set_up_game()
