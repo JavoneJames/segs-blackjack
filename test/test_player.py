@@ -12,11 +12,14 @@ class PlayerTestCase(unittest.TestCase):
         mock_dealer = MagicMock(Dealer)  # Mock the Dealer class
         self.player = Player(mock_dealer)
 
-        # Define the mock cards
+        # define the mock cards
         self.card_king = Card('K')
         self.card_ace = Card('A')
         self.card_queen = Card('Q')
         self.card_9 = Card('9')
+
+        # use mock to return the specific cards
+        mock_dealer.deal_card.side_effect = [self.card_king, self.card_ace, self.card_queen, self.card_9]
 
     def tearDown(self):  # this method will be run after each test
         pass
