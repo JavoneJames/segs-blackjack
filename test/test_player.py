@@ -77,5 +77,12 @@ class PlayerTestCase(unittest.TestCase):
         self.player.retrieve_card(self.card_ace)
         self.assertEqual(self.player.score(), 21)
 
-
+    """ Given I have a nine, an ace, and another ace
+        When my score is evaluated
+        Then my score is 21 """
+    def test_9_ace_and_ace_score(self):
+        self.player.retrieve_card(self.card_9)
+        self.player.retrieve_card(self.card_ace)
+        self.player.retrieve_card(self.card_ace)
+        self.assertEqual(self.player.score(), 21)
             
