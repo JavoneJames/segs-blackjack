@@ -32,6 +32,13 @@ class BlackJack:
             else:
                 print("Insufficient balance, wager amoutn too high!")
 
+    def show_initial_cards(self):
+        # display player's cards and score
+        print(f"Player's card: {self.player}")
+        print("Player's score:", self.player.score())
+        # display dealer's first card (only the upcard)
+        print("Dealer's upcard:", self.dealer.cards[0].rank)
+
 if __name__ == '__main__':
     bj = BlackJack()
     bj.set_up_game()
