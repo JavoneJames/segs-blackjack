@@ -12,3 +12,7 @@ class Card:
             return 11
         else:
             return int(self.rank)
+        
+    # return card rank as a string
+    def __str__(self):
+        return f"{self.rank}"

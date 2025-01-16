@@ -24,6 +24,7 @@ class DeckTestCase(unittest.TestCase):
     # Test if dealing a card removes it from the deck
     def test_deal_card(self):
         original_deck_size = len(self.deck.cards)
+        self.deck.deal_card()
         self.assertEqual(len(self.deck.cards), original_deck_size - 1)
 
 
