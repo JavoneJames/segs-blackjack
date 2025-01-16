@@ -23,3 +23,7 @@ class Person:
             ace_count -= 1
 
         return total
+    
+    # method to be overriden by inherited class 
+    def turn(self):
+        pass
