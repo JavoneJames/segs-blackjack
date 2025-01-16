@@ -36,6 +36,7 @@ class Player(Person):
                 self.retrieve_card(temp)
                 print("Player decides to HIT!")
                 print(f"Card drawn by Player is {temp}")
+                print(f"Player's cards {self}")
                 print("Player's score:", self.score())
 
                 if self.score() > 21:
