@@ -9,3 +9,7 @@ class Dealer(Person):
     # calls shuffle_deck method from Deck to shuffle cards
     def shuffle_deck(self):
         self.deck.shuffle_deck()
+
+    # call deal_card method from Deck to deal a card
+    def deal_card(self):
+        return self.deck.deal_card()
