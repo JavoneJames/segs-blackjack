@@ -15,7 +15,11 @@ class PersonTestCase(unittest.TestCase):
 
     # test that a person with 2 cards has the correct score
     def test_two_cards(self):
-        pass
+        card1 = Card('10')
+        card2 = Card('J')
+        self.person.retrieve_card(card=card1)
+        self.person.retrieve_card(card=card2)
+        self.assertEqual(self.person.score(), 20)
     
     # test that the score is calculated for multiple cards
     def test_multiple_cards(self):
