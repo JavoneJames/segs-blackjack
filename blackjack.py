@@ -43,11 +43,9 @@ class BlackJack:
         # check if either player or dealer has a blackjack
         if self.player.score() == 21:
             print("Player has a Blackjack!")
-            self.determine_outcome()
             return
         elif self.dealer.score() == 21:
             print("Dealer has a Blackjack!")
-            self.determine_outcome()
             return
         # player's turn
         self.player.turn()
