@@ -13,3 +13,9 @@ class Dealer(Person):
     # call deal_card method from Deck to deal a card
     def deal_card(self):
         return self.deck.deal_card()
+
+    # reveal the dealer's cards (all cards)
+    def reveal_cards(self):
+        hand = [str(card) for card in self.cards]
+        print("Dealer's cards:", hand)
+        print("Dealer's score:", self.score())
