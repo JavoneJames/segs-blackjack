@@ -8,6 +8,14 @@ class Player(Person):
         self.avaiable_balance = avaiable_balance
         self.wager = 0
 
+    # return the player's available balance
+    def balance(self):
+        return self.avaiable_balance
+    
+    # allow the player to set the wager amount
+    def set_wager(self, wager_amount):
+        self.wager = wager_amount
+    
     # ask the player whether or not they want to hit or stand
     def choose_action(self):
         user_input = input("Would you like to [H]it or [S]tand? ").lower()
