@@ -1,11 +1,16 @@
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 from src.player import Player
+from src.dealer import Dealer
+from src.deck import Deck
+
 
 class PlayerTestCase(unittest.TestCase):
 
     def setUp(self):  # this method will be run before each test
-        self.player = Player()
+        # create a mock dealer and pass it to the Player
+        mock_dealer = MagicMock(Dealer)  # Mock the Dealer class
+        self.player = Player(mock_dealer)
 
     def tearDown(self):  # this method will be run after each test
         pass
